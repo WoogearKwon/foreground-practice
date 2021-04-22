@@ -1,4 +1,4 @@
-package com.example.foreground_practice
+package com.example.foreground_practice.service
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -10,20 +10,22 @@ import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
+import com.example.foreground_practice.R
+import com.example.foreground_practice.ui.MainActivity
 
-class ForegroundService : Service() {
+class SmartBandService : Service() {
 
     companion object {
         private const val INPUT_EXTRA_KEY = "inputExtra"
-        private const val CHANNEL_ID = "foregrond_service_channel"
+        private const val CHANNEL_ID = "foreground_service_channel"
         fun startService(context: Context, message: String) {
-            val intent = Intent(context, ForegroundService::class.java)
+            val intent = Intent(context, SmartBandService::class.java)
             intent.putExtra(INPUT_EXTRA_KEY, message)
             ContextCompat.startForegroundService(context, intent);
         }
 
         fun stopService(context: Context) {
-            val intent = Intent(context, ForegroundService::class.java)
+            val intent = Intent(context, SmartBandService::class.java)
             context.stopService(intent)
         }
     }
@@ -37,7 +39,8 @@ class ForegroundService : Service() {
             this,
             0,
             notificationIntent,
-            0)
+            0
+        )
 
         val notification = NotificationCompat.Builder(this, CHANNEL_ID)
             .setContentTitle("Foreground Service Example")
@@ -60,7 +63,8 @@ class ForegroundService : Service() {
             val serviceChannel = NotificationChannel(
                 CHANNEL_ID,
                 "Foreground Service Example",
-                NotificationManager.IMPORTANCE_DEFAULT)
+                NotificationManager.IMPORTANCE_LOW
+            )
 
             val manager = getSystemService(NotificationManager::class.java)
             manager.createNotificationChannel(serviceChannel)

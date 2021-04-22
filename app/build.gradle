@@ -49,4 +49,6 @@ dependencies {
     def work_version = "2.5.0"
     implementation "androidx.work:work-runtime:$work_version"
 
+//    compile files('libs/vpbluetooth_1.0.3.jar')
+//    compile files('libs/vpprotocol_1.2.3.0.jar')
 }
