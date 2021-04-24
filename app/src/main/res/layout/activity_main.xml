@@ -7,20 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <Button
         android:id="@+id/buttonStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="220dp"
-        android:background="@color/colorPrimary"
-        android:padding="8dp"
+        android:padding="18dp"
         android:text="Start WorkManager"
-        android:textColor="@color/colorWhite"
-        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,19 +33,25 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSavedTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saved Time is: "
+        android:textColor="@color/colorBlack"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvSavedNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
         android:id="@+id/buttonStop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@color/colorPrimary"
-        android:padding="8dp"
+        android:padding="18dp"
         android:text="Stop WorkManager"
-        android:textColor="@color/colorWhite"
-        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
